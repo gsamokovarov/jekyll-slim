@@ -3,7 +3,6 @@ require 'slim'
 module Jekyll
   class SlimConverter < Converter
     safe true
-    priority :low
 
     def matches(ext)
       ext =~ /slim/i
