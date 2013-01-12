@@ -14,13 +14,7 @@ module Jekyll
     end
 
     def convert(content)
-      Slim::Template.new { content }.render
-    end
-  end
-
-  class SlimLogicLessConverter < SlimConverter
-    def convert(content)
-      Slime::Template.new(:logic_less => true) { content }.render
+      Slim::Template.new(@config) { content }.render
     end
   end
 end
