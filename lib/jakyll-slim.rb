@@ -14,7 +14,7 @@ module Jekyll
     end
 
     def convert(content)
-      Slim::Template.new(@config) { content }.render
+      Slim::Template.new(@config['slim']) { content }.render
     end
   end
 end
