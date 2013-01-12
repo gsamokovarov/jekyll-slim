@@ -25,9 +25,8 @@ module Jekyll
 
     def ensure_config_integrity
       config = @config['slim'] ||= {}
-      config.each do |key, value|
-        config[key.to_sym] = value
-      end
+      config.each { |key, value| config[key.to_sym] = value }
+      config.reject! { |key| key.is_a? String }
     end
   end
 end
