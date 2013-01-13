@@ -27,6 +27,7 @@ module Jekyll
       config = (@config['slim'] ||= {}).dup
       config.each { |key, value| config[key.to_sym] = value }
       config.reject! { |key| key.is_a? String }
+      @config['slim'] = config
     end
   end
 end
